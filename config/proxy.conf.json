@@ -1,0 +1,9 @@
+{
+  "/remotes/app1": {
+    "target": "http://localhost:4201",
+    "secure": false,
+    "pathRewrite": {
+      "^/remotes/app1": ""
+    }
+  }
+}

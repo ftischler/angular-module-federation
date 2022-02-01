@@ -1,13 +1,7 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { loadRemoteEntry } from '@angular-architects/module-federation';
+const { error } = console;
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
-
-if (environment.production) {
-  enableProdMode();
-}
-
-platformBrowserDynamic()
-  .bootstrapModule(AppModule)
-  .catch((err) => console.error(err));
+loadRemoteEntry( '/remotes/app1/remoteEntry.js', 'app1')
+  .catch((err) => error('Error loading remote entries', err))
+  .then(() => import('./bootstrap'))
+  .catch((err) => error(err));
