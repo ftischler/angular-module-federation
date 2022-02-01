@@ -233,6 +233,16 @@
             ],
             "parallel": true
           }
+        },
+        "serve-prod": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx serve shell",
+              "node server.mjs"
+            ],
+            "parallel": true
+          }
         }
       }
     },
