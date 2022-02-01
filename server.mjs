@@ -1,5 +1,4 @@
 import express from 'express';
-import { createProxyMiddleware } from 'http-proxy-middleware';
 import { join } from 'path';
 
 /**
@@ -9,7 +8,7 @@ import { join } from 'path';
 const app = express();
 
 app.use('/remotes/app1', express.static(join(process.cwd(), 'dist', 'apps', 'app1')));
-app.use('/', createProxyMiddleware({ target: 'http://localhost:4200' }));
+app.use('/', express.static(join(process.cwd(), 'dist', 'apps', 'shell')));
 
 const port = process.env.PORT || 3000;
 

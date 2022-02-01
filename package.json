@@ -8,7 +8,7 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "serve:prod": "nx run shell:serve-prod"
+    "serve:prod": "node server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -23,7 +23,6 @@
     "@angular/router": "^12.2.0",
     "@nrwl/angular": "12.10.1",
     "express": "^4.17.2",
-    "http-proxy-middleware": "^2.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
